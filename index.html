@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shino — Paid Media &amp; SEO Specialist</title>
+<meta name="description" content="Shino is a freelance performance marketer offering high paying freelance skills in Meta Ads, Google Ads, and SEO. Browse freelance portfolio examples and get in touch to discuss freelance rates.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --surface:#f6f8fb;
+    --ink:#0f1115;
+    --ink-soft:#4b5568;
+    --muted:#8a93a3;
+    --line:#e7eaf0;
+    --blue:#2954e5;
+    --blue-deep:#173c9c;
+    --green:#17a673;
+    --shadow-1: 0 1px 2px rgba(15,17,21,.04);
+    --shadow-2: 0 12px 30px rgba(15,17,21,.08);
+    --shadow-3: 0 24px 60px rgba(15,17,21,.12);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  section{padding:120px 8vw;}
+  .wrap{max-width:1180px; margin:0 auto;}
+
+  :focus-visible{outline:2px solid var(--blue); outline-offset:3px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 8vw;
+    background:rgba(255,255,255,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  header.scrolled{ border-bottom-color:var(--line); box-shadow:0 4px 20px rgba(15,17,21,.04); }
+  .logo{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:20px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .dot{ width:8px; height:8px; border-radius:50%; background:var(--green); display:inline-block; }
+  nav{display:flex; gap:36px;}
+  nav a{
+    font-size:14.5px; font-weight:500; color:var(--ink-soft);
+    position:relative; padding:4px 0;
+    transition:color .25s ease;
+  }
+  nav a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1.5px;
+    background:var(--blue); transition:width .28s ease;
+  }
+  nav a:hover{ color:var(--ink); }
+  nav a:hover::after{ width:100%; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:200px 8vw 120px;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+    perspective:1400px;
+  }
+  .hero-copy{ opacity:0; transform:translateY(18px); animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .hero-copy .eyebrow{
+    font-size:14.5px; color:var(--blue); font-weight:600; margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-copy .eyebrow::before{ content:''; width:26px; height:1.5px; background:var(--blue); display:inline-block; }
+  .hero-copy h1{
+    font-size:clamp(40px, 5vw, 64px);
+    line-height:1.06;
+    font-weight:700;
+    max-width:11ch;
+  }
+  .hero-copy p{
+    margin-top:24px; font-size:18px; color:var(--ink-soft); max-width:46ch;
+  }
+  .hero-actions{ margin-top:38px; display:flex; gap:16px; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:10px;
+    font-size:15px; font-weight:600;
+    cursor:pointer; border:none;
+    transition:transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s ease;
+    position:relative;
+  }
+  .btn-primary{
+    background:var(--blue); color:#fff;
+    box-shadow:0 1px 0 var(--blue-deep), 0 10px 24px rgba(41,84,229,.28);
+  }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 1px 0 var(--blue-deep), 0 18px 32px rgba(41,84,229,.36); }
+  .btn-primary:active{ transform:translateY(-1px); }
+  .btn-ghost{
+    background:transparent; color:var(--ink); border:1.5px solid var(--line);
+  }
+  .btn-ghost:hover{ border-color:var(--ink); transform:translateY(-3px); }
+
+  /* Hero 3D graphic */
+  .hero-visual{
+    position:relative; height:420px;
+    transform-style:preserve-3d;
+    opacity:0; animation:rise 1s cubic-bezier(.2,.7,.2,1) .15s forwards;
+  }
+  .stage{
+    position:relative; width:100%; height:100%;
+    transform-style:preserve-3d;
+    transition:transform .15s ease-out;
+  }
+  .card3d{
+    position:absolute; border-radius:16px;
+    background:#fff;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow-3);
+    padding:20px;
+  }
+  .card3d.main{
+    width:280px; height:190px; top:60px; left:60px;
+    transform:translateZ(60px) rotateY(-8deg) rotateX(4deg);
+  }
+  .card3d.back{
+    width:240px; height:150px; top:170px; left:190px;
+    transform:translateZ(0px) rotateY(-8deg) rotateX(4deg);
+    background:var(--surface);
+  }
+  .card3d.chip{
+    width:150px; height:64px; top:10px; left:250px;
+    transform:translateZ(110px) rotateY(-8deg) rotateX(4deg);
+    display:flex; align-items:center; gap:10px;
+    padding:12px 16px;
+  }
+  .chip-dot{ width:34px; height:34px; border-radius:9px; background:var(--green); flex:none; }
+  .chip-txt .num{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; }
+  .chip-txt .lbl{ font-size:11.5px; color:var(--muted); }
+
+  .bars{ display:flex; align-items:flex-end; gap:8px; height:80px; margin-top:14px; }
+  .bars span{ flex:1; border-radius:4px 4px 0 0; background:linear-gradient(180deg, var(--blue), var(--blue-deep)); }
+  .bars span:nth-child(1){height:35%;} .bars span:nth-child(2){height:55%;} .bars span:nth-child(3){height:40%;}
+  .bars span:nth-child(4){height:78%; background:linear-gradient(180deg, var(--green), #0f7a53);} .bars span:nth-child(5){height:60%;}
+  .bars span:nth-child(6){height:90%; background:linear-gradient(180deg, var(--green), #0f7a53);}
+
+  .card-label{ font-size:12.5px; color:var(--muted); font-weight:500; }
+  .card-title{ font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:600; margin-top:4px; }
+
+  @keyframes rise{ to{opacity:1; transform:translateY(0);} }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin-bottom:56px; flex-wrap:wrap; }
+  .section-head h2{ font-size:clamp(28px,3.2vw,38px); font-weight:600; }
+  .section-head .sub{ color:var(--muted); font-size:15px; max-width:32ch; }
+
+  /* ---------- SKILLS ---------- */
+  .skills{ background:var(--surface); }
+  .skill-row{
+    display:grid; grid-template-columns:200px 1fr; gap:40px;
+    padding:34px 0; border-top:1px solid var(--line);
+    transition:padding-left .35s ease, background .35s ease;
+    cursor:default;
+  }
+  .skill-row:last-child{ border-bottom:1px solid var(--line); }
+  .skill-row:hover{ padding-left:18px; background:rgba(41,84,229,0.035); }
+  .skill-row h3{ font-size:22px; font-weight:600; display:flex; align-items:center; gap:12px; }
+  .skill-row .mark{ width:8px; height:8px; border-radius:50%; background:var(--line); transition:background .3s ease, box-shadow .3s ease; flex:none; }
+  .skill-row:hover .mark{ background:var(--blue); box-shadow:0 0 0 5px rgba(41,84,229,.14); }
+  .skill-row p{ color:var(--ink-soft); font-size:15.5px; max-width:60ch; }
+  .skill-tags{ margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+  .skill-tags span{
+    font-size:12.5px; padding:5px 12px; border-radius:999px;
+    border:1px solid var(--line); color:var(--ink-soft);
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .skill-row:hover .skill-tags span{ border-color:var(--blue); color:var(--blue-deep); }
+
+  /* ---------- PROJECTS ---------- */
+  .project-case{
+    display:grid; grid-template-columns:1fr 0.85fr; gap:56px; align-items:center;
+  }
+  .case-copy .tag-eyebrow{
+    font-size:13px; font-weight:600; color:var(--green);
+    display:flex; align-items:center; gap:8px; margin-bottom:16px;
+  }
+  .tag-eyebrow::before{ content:''; width:20px; height:1.5px; background:var(--green); }
+  .case-copy h3{ font-size:clamp(26px,3vw,34px); font-weight:600; max-width:14ch; }
+  .case-copy p{ margin-top:20px; color:var(--ink-soft); font-size:16px; max-width:52ch; }
+  .case-list{ margin-top:26px; display:flex; flex-direction:column; gap:12px; }
+  .case-list li{ list-style:none; display:flex; gap:12px; align-items:flex-start; font-size:15px; color:var(--ink); }
+  .case-list li::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--blue); margin-top:9px; flex:none; }
+  .case-tags{ margin-top:28px; display:flex; gap:10px; flex-wrap:wrap; }
+  .case-tags span{
+    font-size:13px; padding:7px 14px; border-radius:8px;
+    background:var(--surface); border:1px solid var(--line); color:var(--ink-soft); font-weight:500;
+  }
+
+  .phone-wrap{ perspective:1200px; display:flex; justify-content:center; }
+  .phone{
+    width:270px; height:400px; border-radius:28px;
+    background:linear-gradient(160deg,#12141a,#22242c);
+    padding:12px; box-shadow:var(--shadow-3);
+    transform:rotateY(-14deg) rotateX(6deg);
+    transition:transform .2s ease-out;
+    transform-style:preserve-3d;
+  }
+  .phone-screen{
+    width:100%; height:100%; border-radius:18px; background:#fff; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .phone-bar{ padding:14px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid var(--line); }
+  .phone-bar .av{ width:26px; height:26px; border-radius:50%; background:var(--blue); }
+  .phone-bar .name{ font-size:12px; font-weight:600; }
+  .phone-bar .sub{ font-size:10px; color:var(--muted); }
+  .phone-ad{ flex:1; background:var(--surface); margin:12px; border-radius:12px; display:flex; align-items:center; justify-content:center; }
+  .phone-ad .ph-bars{ display:flex; align-items:flex-end; gap:6px; height:70px; }
+  .phone-ad .ph-bars span{ width:14px; border-radius:3px 3px 0 0; background:linear-gradient(180deg,var(--blue),var(--green)); }
+  .phone-ad .ph-bars span:nth-child(1){height:30%;} .phone-ad .ph-bars span:nth-child(2){height:52%;}
+  .phone-ad .ph-bars span:nth-child(3){height:88%;} .phone-ad .ph-bars span:nth-child(4){height:64%;}
+  .phone-foot{ padding:12px 16px; display:flex; justify-content:space-between; font-size:11px; color:var(--muted); }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ background:var(--surface); text-align:left; }
+  .contact .wrap{ display:flex; flex-direction:column; align-items:flex-start; }
+  .contact .eyebrow{ font-size:14.5px; color:var(--blue); font-weight:600; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+  .contact .eyebrow::before{ content:''; width:26px; height:1.5px; background:var(--blue); }
+  .contact h2{ font-size:clamp(30px,4vw,46px); font-weight:600; max-width:16ch; }
+  .contact p{ margin-top:18px; color:var(--ink-soft); font-size:16.5px; max-width:48ch; }
+
+  .email-link{
+    margin-top:40px; font-family:'Space Grotesk',sans-serif; font-weight:600;
+    font-size:clamp(22px,3.4vw,32px); display:inline-block; position:relative;
+    padding-bottom:6px; color:var(--ink);
+  }
+  .email-link::after{
+    content:''; position:absolute; left:0; bottom:0; width:100%; height:2px;
+    background:var(--line); transition:background .3s ease;
+  }
+  .email-link:hover::after{ background:var(--blue); }
+  .email-link:hover{ color:var(--blue-deep); }
+
+  .social-row{ margin-top:44px; display:flex; gap:14px; }
+  .social-row a{
+    width:46px; height:46px; border-radius:12px; background:#fff; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    transition:transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s ease, border-color .25s ease;
+  }
+  .social-row a:hover{ transform:translateY(-4px); box-shadow:var(--shadow-2); border-color:var(--blue); }
+  .social-row svg{ width:19px; height:19px; stroke:var(--ink-soft); }
+  .social-row a:hover svg{ stroke:var(--blue); }
+
+  footer{
+    padding:32px 8vw; display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid var(--line); font-size:13px; color:var(--muted); flex-wrap:wrap; gap:10px;
+  }
+
+  @media (max-width:880px){
+    section{ padding:80px 6vw; }
+    .hero{ grid-template-columns:1fr; padding-top:150px; }
+    .hero-visual{ height:320px; order:-1; }
+    .project-case{ grid-template-columns:1fr; }
+    .phone{ width:220px; height:330px; }
+    .skill-row{ grid-template-columns:1fr; gap:10px; }
+    nav{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="logo"><span class="dot"></span>Shino</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">Paid Media &amp; SEO</div>
+    <h1>I grow brands through ads that convert.</h1>
+    <p>Shino — a performance marketer specializing in Meta Ads, Google Ads, and SEO, three of today's high paying freelance skills. I plan, launch, and optimize campaigns that turn budget into measurable growth.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">See my work</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="stage" id="stage">
+      <div class="card3d main">
+        <div class="card-label">Campaign performance</div>
+        <div class="card-title">Meta Ads — Reach</div>
+        <div class="bars">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="card3d back"></div>
+      <div class="card3d chip">
+        <div class="chip-dot"></div>
+        <div class="chip-txt">
+          <div class="num">SEO</div>
+          <div class="lbl">Organic growth</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What I do</h2>
+      <div class="sub">Three disciplines, one goal — sustainable growth for your business.</div>
+    </div>
+
+    <div class="skill-row">
+      <h3><span class="mark"></span>Meta Ads</h3>
+      <div>
+        <p>Full-funnel Facebook and Instagram campaigns — audience research, creative testing, and budget optimization to bring down cost per result while scaling spend.</p>
+        <div class="skill-tags"><span>Audience targeting</span><span>Creative testing</span><span>Retargeting</span><span>Budget scaling</span></div>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3><span class="mark"></span>Google Ads</h3>
+      <div>
+        <p>Search, display, and shopping campaigns built around intent — keyword strategy, ad copy, and bid management aimed at efficient, high-quality conversions.</p>
+        <div class="skill-tags"><span>Search campaigns</span><span>Keyword strategy</span><span>Conversion tracking</span><span>Bid management</span></div>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3><span class="mark"></span>SEO</h3>
+      <div>
+        <p>On-page and technical SEO to improve organic visibility — keyword research, content structure, and site health fixes that compound traffic over time.</p>
+        <div class="skill-tags"><span>Keyword research</span><span>On-page SEO</span><span>Technical audits</span><span>Content strategy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <div class="sub">One of several freelance portfolio examples from campaigns I've planned and managed end to end.</div>
+    </div>
+
+    <div class="project-case">
+      <div class="case-copy">
+        <div class="tag-eyebrow">Client campaign</div>
+        <h3>Meta Ads campaign for a client</h3>
+        <p>Planned and ran a Meta Ads campaign end to end — from audience strategy and creative direction to daily budget and bid optimization — to drive qualified traffic and conversions for the client's business.</p>
+        <ul class="case-list">
+          <li>Built and tested audience segments to find the strongest-performing cohorts</li>
+          <li>Designed and iterated on ad creative based on engagement data</li>
+          <li>Managed daily budget allocation and bid strategy to control cost per result</li>
+        </ul>
+        <div class="case-tags"><span>Meta Ads</span><span>Audience testing</span><span>Creative iteration</span><span>Budget management</span></div>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone" id="phone">
+          <div class="phone-screen">
+            <div class="phone-bar">
+              <div class="av"></div>
+              <div>
+                <div class="name">Client Business</div>
+                <div class="sub">Sponsored</div>
+              </div>
+            </div>
+            <div class="phone-ad">
+              <div class="ph-bars"><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="phone-foot"><span>Meta Ads Manager</span><span>Active</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's grow your next campaign.</h2>
+    <p>Open to new projects across Meta Ads, Google Ads, and SEO. Reach out for freelance rates and availability — the fastest way to reach me is email, and I usually reply within a day.</p>
+    <a class="email-link" href="mailto:hello@example.com">hello@example.com</a>
+
+    <div class="social-row">
+      <a href="#" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="1.6"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+      <a href="#" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© <span id="year"></span> Shino. All rights reserved.</div>
+  <div>Paid Media &amp; SEO</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // 3D tilt for hero stage
+  const heroVisual = document.querySelector('.hero-visual');
+  const stage = document.getElementById('stage');
+  if (heroVisual && stage && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVisual.addEventListener('mousemove', (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      stage.style.transform = `rotateY(${x * 14}deg) rotateX(${-y * 14}deg)`;
+    });
+    heroVisual.addEventListener('mouseleave', () => {
+      stage.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
+
+  // 3D tilt for phone mockup
+  const phoneWrap = document.querySelector('.phone-wrap');
+  const phone = document.getElementById('phone');
+  if (phoneWrap && phone && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    phoneWrap.addEventListener('mousemove', (e) => {
+      const rect = phoneWrap.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      phone.style.transform = `rotateY(${-14 + x * 16}deg) rotateX(${6 - y * 16}deg)`;
+    });
+    phoneWrap.addEventListener('mouseleave', () => {
+      phone.style.transform = 'rotateY(-14deg) rotateX(6deg)';
+    });
+  }
+</script>
+
+</body>
+</html>
